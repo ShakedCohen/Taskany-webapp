@@ -92,7 +92,7 @@ def set_incoming_list():
         abort(403)
 
 def index():
-    return "Hello"
+    return redirect(url_for('app_login'))
 
 def reset_data():
     system_has_no_users = User.objects.count() == 0
@@ -325,7 +325,7 @@ def create_mock_data():
     amy.set_password("martian_money")
     amy.save()
 
-    zoid = User(name="Zoidberd", roles=[Role.USER])
+    zoid = User(name="Zoidberg", roles=[Role.USER])
     zoid.set_password("why_not_me")
     zoid.save()
 
